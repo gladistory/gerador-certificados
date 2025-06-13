@@ -1,0 +1,50 @@
+.page-header {
+    margin-bottom: 32px;
+}
+
+.page-header h2 {
+    color: #121621;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.page-header p {
+    color: #64748B;
+    font-size: 14px;
+}
+
+.custom-card {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    height: 270px;
+    width: 672px;
+}
+
+.icon-certificados i {
+    color: #64748B;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    margin-bottom: 20px;
+}
+
+.text-certificados h3 {
+    color: #1A2856;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}
+
+.text-certificados p {
+    color: #64748B;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.item-certificados {
+    width: 672px;
+}
