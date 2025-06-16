@@ -16,3 +16,11 @@
     color: #3B5AC2 !important;
 }
 
+.navbar-nav li i {
+    font-size: 20px;
+}
+
+.navbar-nav li {
+    font-size: 14px;
+}
+

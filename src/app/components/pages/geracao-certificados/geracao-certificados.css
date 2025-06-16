@@ -1,0 +1,73 @@
+.page-header {
+    margin-bottom: 32px;
+}
+
+.page-header h2 {
+    color: #121621;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.page-header p {
+    color: #64748B;
+    font-size: 14px;
+}
+
+.custom-card {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 32px;
+    width: 672px;
+}
+.form-label {
+    display: flex;
+    font-size: 14px;
+    color: #1A2856;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #64748B; /* Escolha a cor desejada */
+    opacity: 1;     /* Garante que a cor será aplicada */
+}
+
+.title-form {
+    display: flex;
+    justify-content: start;
+}
+
+.title-form h3 {
+    color: #1A2856;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.form-control {
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    margin-right: 8px;
+
+}
+
+.list-group li {
+    display: flex;
+    justify-content: space-between;
+    color: #121621;
+    align-items: center;
+    font-size: 16px;
+    padding: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.list-group i {
+    color: #E95F5F;
+    font-size: 24px;
+}
+
+.card-list {
+    padding: 16px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+}

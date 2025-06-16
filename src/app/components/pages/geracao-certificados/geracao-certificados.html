@@ -1,1 +1,39 @@
-<p>geracao-certificados works!</p>
+<div class="page-header">
+    <h2 class="text-center">Geração de certificado</h2>
+    <p class="text-center">Preencha os dados para gerar um novo certificado</p>
+</div>
+
+<div class="custom-card">
+    <div class="form-container">
+        <div class="title-form">
+            <h3>Novo certificado</h3>
+        </div>
+        <form class="form-container">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nome completo</label>
+                <input type="text" class="form-control" aria-describedby="emailHelp"
+                    placeholder="Digite o nome completo">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Atividade</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Digite o título da atividade">
+                    <app-secundary-button></app-secundary-button>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Lista de atividades</label>
+                <div class="card-list">
+                    <ul class="list-group list-group-flush ">
+                        <li class="list-group-item">An itemi <i class="ph ph-x"></i></li>
+                        <li class="list-group-item">A second item <i class="ph ph-x"></i></li>
+                        <li class="list-group-item">A third item <i class="ph ph-x"></i></li>
+                        <li class="list-group-item">A fourth item <i class="ph ph-x"></i></li>
+                        <li class="list-group-item">And a fifth one <i class="ph ph-x"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <app-primary-button></app-primary-button>
+        </form>
+    </div>
+</div>
