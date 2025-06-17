@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+
+.action-buttons {
+    width: 800px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-button {
+   color: #64748B;
+   display: flex;
+   align-items: center;
+   font-size: 14px;
+}
+
+.back-button i {
+   font-size: 20px;
+   padding-right: 6px;  
+}
+
+.preview-certificado {
+    border-radius: 12px;
+    background-image: url('../../../../../public/certificado/Certificate_BG.png');
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    margin: 40px;
+    width: 720px;
+    height: 470px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ribbon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.header {
+    margin-top: 64px;
+    height: 65px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1A2856;
+    letter-spacing: 2.4px;
+    text-align: center; 
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #020817;
+    text-align: center;
+}
+
+.content-name {
+    margin-top: 20px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    font-size: 52px;
+    color: #3B5AC2;
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    font-weight: 700;
+}
+
+.content-description {
+    margin-top: 20px;
+    width: 412px;
+}
+
+.content-title {
+    font-size: 12px;
+    text-align: center;
+}
+
+.content-activities {
+    font-size: 14px;
+    text-align: center;
+}
+
+.content-footer {
+    margin-top: 32px;
+    width: 412px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.issue-date {
+    font-size: 12px;
+    color: #020817;
+    text-align: center;
+    font-weight: bold;
+}
+
+.signature {
+    position: absolute;
+    bottom: 64px;
+    right: 80px;
+    width: 64px;
+}

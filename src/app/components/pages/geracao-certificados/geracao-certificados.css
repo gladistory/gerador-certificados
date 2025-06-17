@@ -43,11 +43,21 @@ textarea::placeholder {
     margin-bottom: 16px;
 }
 
-.form-control {
+.form-custom-control {
     border: 1px solid #E2E8F0;
     border-radius: 6px;
     margin-right: 8px;
+    width: 100%;
+    padding: 8px 16px;
+}
 
+.form-custom-control:focus {
+    border: 1px solid #3B5AC2;
+    border-radius: 6px;
+}
+
+.form-group:focus-within .form-label {
+    color: #3B5AC2; /* Cor desejada ao focar o input */
 }
 
 .list-group li {
@@ -70,4 +80,29 @@ textarea::placeholder {
     padding: 16px;
     border: 1px solid #E2E8F0;
     border-radius: 8px;
+}
+
+.remove-btn {
+   width: 24px;
+   height: 24px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.remove-btn:hover {
+    background-color: #E2E8F0;
+    border-radius: 4px;
+}
+
+.error-message {
+    display: flex;
+    align-items: center;
+    color: #D71D1D;
+    font-size: 12px;
+}
+
+.error-message i {
+    margin-right: 4px;
+    color: #E95F5F;
 }

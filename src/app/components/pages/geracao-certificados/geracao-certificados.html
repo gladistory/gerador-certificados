@@ -9,27 +9,35 @@
             <h3>Novo certificado</h3>
         </div>
         <form class="form-container">
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="exampleInputEmail1" class="form-label">Nome completo</label>
-                <input type="text" class="form-control" aria-describedby="emailHelp"
-                    placeholder="Digite o nome completo">
+                <input type="text" class="form-custom-control" placeholder="Digite o nome completo">
+                <div class="error-message">
+                    <i class="ph ph-warning-circle"></i> Campo obrigatório
+                </div>
             </div>
-            <div class="mb-3">
+            <div class="form-group">
                 <label class="form-label">Atividade</label>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Digite o título da atividade">
+                <div class="d-flex align-items-center">
+                    <input type="text" class="form-custom-control" placeholder="Digite o título da atividade">
                     <app-secundary-button></app-secundary-button>
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 mt-3">
                 <label class="form-label">Lista de atividades</label>
                 <div class="card-list">
                     <ul class="list-group list-group-flush ">
-                        <li class="list-group-item">An itemi <i class="ph ph-x"></i></li>
-                        <li class="list-group-item">A second item <i class="ph ph-x"></i></li>
-                        <li class="list-group-item">A third item <i class="ph ph-x"></i></li>
-                        <li class="list-group-item">A fourth item <i class="ph ph-x"></i></li>
-                        <li class="list-group-item">And a fifth one <i class="ph ph-x"></i></li>
+                        <li class="list-group-item">An itemi <div class="remove-btn"><i class="ph ph-x"></i></div>
+                        </li>
+                        <li class="list-group-item">A second item <div class="remove-btn"><i class="ph ph-x"></i></div>
+                        </li>
+                        <li class="list-group-item">A third item <div class="remove-btn"><i class="ph ph-x"></i></div>
+                        </li>
+                        <li class="list-group-item">A fourth item <div class="remove-btn"><i class="ph ph-x"></i></div>
+                        </li>
+                        <li class="list-group-item">And a fifth one <div class="remove-btn"><i class="ph ph-x"></i>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
