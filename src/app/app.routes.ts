@@ -13,7 +13,7 @@ export const routes: Routes = [
         component: GeracaoCertificados
     },
     {
-        path: 'preview-certificado',
+        path: 'preview-certificado/:id',
         component: PreviewCertificado
     }
 ];

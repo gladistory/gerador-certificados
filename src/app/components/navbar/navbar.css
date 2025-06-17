@@ -2,6 +2,13 @@
     background-color: #ffffff;
     padding: 1rem 2rem;
     border-bottom: #e2e8f0 1px solid;
+    padding-right: 28px;
+    padding-left: 12px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .navbar-logo{
