@@ -20,8 +20,8 @@
             <div class="form-group mb-3">
                 <label for="atividade" class="form-label">Atividade</label>
                 <div class="d-flex align-items-center">
-                    <input [(ngModel)]="certificado.atividades" #atividadeRef="ngModel" maxlength="50" required
-                        name="atividade" id="atividade" type="text" class="form-custom-control"
+                    <input [(ngModel)]="atividade" #atividadeRef="ngModel" maxlength="50" required name="atividade"
+                        id="atividade" type="text" class="form-custom-control"
                         placeholder="Digite o título da atividade">
                     <app-secundary-button (click)="addAtividade()" [textSecundaryButton]="'Adicionar'"
                         [icon]="'ph ph-plus'" [disabled]="atividadeRef.invalid!"></app-secundary-button>
@@ -38,7 +38,7 @@
                     </ul>
                 </div>
             </div>
-            <app-primary-button [disabled]="validateForm()" (click)="submitForm()"
+            <app-primary-button [disabled]="!validateForm()" (click)="submitForm()"
                 [textPrimaryButton]="'Gerar Certificado'"></app-primary-button>
         </form>
     </div>
