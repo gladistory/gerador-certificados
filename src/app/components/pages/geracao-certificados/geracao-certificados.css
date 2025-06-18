@@ -106,3 +106,7 @@ textarea::placeholder {
     margin-right: 4px;
     color: #E95F5F;
 }
+
+.form-group:has(.error-message) label {
+    color: #D71D1D;
+}

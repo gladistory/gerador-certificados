@@ -8,35 +8,38 @@
         <div class="title-form">
             <h3>Novo certificado</h3>
         </div>
-        <form class="form-container">
+        <form #form="ngForm" novalidate class="form-container">
             <div class="mb-3 form-group">
-                <label for="exampleInputEmail1" class="form-label">Nome completo</label>
-                <input [(ngModel)]="nome" name="nome" type="text" class="form-custom-control"
-                    placeholder="Digite o nome completo">
-                <div class="error-message">
+                <label for="nome" class="form-label">Nome completo</label>
+                <input [(ngModel)]="nome" #nomeRef="ngModel" required maxlength="100" name="nome" type="text"
+                    class="form-custom-control" placeholder="Digite o nome completo">
+                <div *ngIf="nomeRef.invalid && (nomeRef.dirty || nomeRef.touched)" class="error-message">
                     <i class="ph ph-warning-circle"></i> Campo obrigatório
                 </div>
             </div>
-            <div class="form-group">
-                <label class="form-label">Atividade</label>
+            <div class="form-group mb-3">
+                <label for="atividade" class="form-label">Atividade</label>
                 <div class="d-flex align-items-center">
-                    <input [(ngModel)]="atividade" name="atividade" id="atividade" type="text"
-                        class="form-custom-control" placeholder="Digite o título da atividade">
-                    <app-secundary-button></app-secundary-button>
+                    <input [(ngModel)]="atividade" #atividadeRef="ngModel" maxlength="50" required name="atividade"
+                        id="atividade" type="text" class="form-custom-control"
+                        placeholder="Digite o título da atividade">
+                    <app-secundary-button (click)="addAtividade()" [textSecundaryButton]="'Adicionar'"
+                        [icon]="'ph ph-plus'" [disabled]="atividadeRef.invalid!"></app-secundary-button>
                 </div>
             </div>
-            <div class="mb-3 mt-3">
+            <div class="mb-3 mt-3" *ngIf="atividades.length > 0">
                 <label class="form-label">Lista de atividades</label>
                 <div class="card-list">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" *ngFor="let atividade of atividades">
+                        <li class="list-group-item" *ngFor="let atividade of atividades; let i = index">
                             {{ atividade }}
-                            <div class="remove-btn"><i class="ph ph-x"></i></div>
+                            <div class="remove-btn" (click)="deleteAtividade(i)"><i class="ph ph-x"></i></div>
                         </li>
                     </ul>
                 </div>
             </div>
-            <app-primary-button></app-primary-button>
+            <app-primary-button [disabled]="form.invalid! && atividades.length === 0"
+                [textPrimaryButton]="'Gerar Certificado'"></app-primary-button>
         </form>
     </div>
 </div>

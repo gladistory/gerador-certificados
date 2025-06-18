@@ -9,11 +9,26 @@ import { CommonModule } from '@angular/common';
   selector: 'app-geracao-certificados',
   imports: [PrimaryButton, SecundaryButton, FormsModule, CommonModule],
   templateUrl: './geracao-certificados.html',
-  styleUrl: './geracao-certificados.css'
+  styleUrls: ['./geracao-certificados.css']
 })
 export class GeracaoCertificados {
 
   nome: string = '';
   atividade: string = '';
-  atividades: string[] = ["testes", "provas", "atividades", "exercícios"];
+  atividades: string[] = [];
+  formValido: boolean = true;
+
+
+  deleteAtividade(index: number) {
+    this.atividades.splice(index, 1);
+  }
+
+  addAtividade() {
+    if (this.atividade.trim() !== '') {
+      this.atividades.push(this.atividade.trim());
+      this.atividade = '';
+    }
+  }
+
 }
+
