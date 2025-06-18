@@ -11,8 +11,8 @@
         <form #form="ngForm" novalidate class="form-container">
             <div class="mb-3 form-group">
                 <label for="nome" class="form-label">Nome completo</label>
-                <input [(ngModel)]="nome" #nomeRef="ngModel" required maxlength="100" name="nome" type="text"
-                    class="form-custom-control" placeholder="Digite o nome completo">
+                <input [(ngModel)]="certificado.nome" #nomeRef="ngModel" required maxlength="100" name="nome"
+                    type="text" class="form-custom-control" placeholder="Digite o nome completo">
                 <div *ngIf="nomeRef.invalid && (nomeRef.dirty || nomeRef.touched)" class="error-message">
                     <i class="ph ph-warning-circle"></i> Campo obrigatório
                 </div>
@@ -20,25 +20,25 @@
             <div class="form-group mb-3">
                 <label for="atividade" class="form-label">Atividade</label>
                 <div class="d-flex align-items-center">
-                    <input [(ngModel)]="atividade" #atividadeRef="ngModel" maxlength="50" required name="atividade"
-                        id="atividade" type="text" class="form-custom-control"
+                    <input [(ngModel)]="certificado.atividades" #atividadeRef="ngModel" maxlength="50" required
+                        name="atividade" id="atividade" type="text" class="form-custom-control"
                         placeholder="Digite o título da atividade">
                     <app-secundary-button (click)="addAtividade()" [textSecundaryButton]="'Adicionar'"
                         [icon]="'ph ph-plus'" [disabled]="atividadeRef.invalid!"></app-secundary-button>
                 </div>
             </div>
-            <div class="mb-3 mt-3" *ngIf="atividades.length > 0">
+            <div class="mb-3 mt-3">
                 <label class="form-label">Lista de atividades</label>
                 <div class="card-list">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" *ngFor="let atividade of atividades; let i = index">
+                        <li class="list-group-item" *ngFor="let atividade of certificado.atividades; let i = index">
                             {{ atividade }}
                             <div class="remove-btn" (click)="deleteAtividade(i)"><i class="ph ph-x"></i></div>
                         </li>
                     </ul>
                 </div>
             </div>
-            <app-primary-button [disabled]="form.invalid! && atividades.length === 0"
+            <app-primary-button [disabled]="validateForm()" (click)="submitForm()"
                 [textPrimaryButton]="'Gerar Certificado'"></app-primary-button>
         </form>
     </div>
