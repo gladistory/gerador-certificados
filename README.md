@@ -1,59 +1,113 @@
-# GeradorCertificados
+# Gerador de Certificados – Documentação Técnica
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
+## Visão Geral
 
-## Development server
+O Gerador de Certificados é uma aplicação web desenvolvida para facilitar a criação, visualização e gerenciamento de certificados digitais. O sistema permite ao usuário cadastrar informações, gerar certificados personalizados e visualizar o histórico de certificados emitidos.
 
-To start a local development server, run:
+- **Tech Stack:** TypeScript, Angular
+- **Público-alvo:** Desenvolvedores e mantenedores do projeto
 
-```bash
-ng serve
+---
+
+## Arquitetura
+
+### Estrutura de Pastas
+
+```
+src/
+  app/
+    components/
+      item-certificado/
+      navbar/
+      pages/
+        certificados/
+        geracao-certificados/
+        preview-certificado/
+      primary-button/
+      secundary-button/
+      ui-base/
+    app.config.ts
+    app.html
+    app.routes.ts
+    app.spec.ts
+    app.ts
+  index.html
+  main.ts
+  styles.css
+public/
+  certificado/
+  navbar/
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Componentização
 
-## Code scaffolding
+- **Navbar:** Navegação principal da aplicação.
+- **UiBase:** Container base para o conteúdo das páginas.
+- **Pages:** 
+  - `certificados`: Lista de certificados gerados.
+  - `geracao-certificados`: Formulário para geração de novos certificados.
+  - `preview-certificado`: Visualização detalhada do certificado.
+- **Buttons:** Botões reutilizáveis (`primary-button`, `secundary-button`).
+- **ItemCertificado:** Exibe informações individuais de um certificado.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
+## Fluxo Principal
+
+1. **Navegação:** O usuário acessa a aplicação e visualiza a lista de certificados.
+2. **Geração:** Ao clicar em "Gerar certificado", é exibido um formulário para preenchimento dos dados.
+3. **Visualização:** Após gerar, o usuário pode visualizar o certificado em detalhes.
+
+---
+
+## Padrões de Código
+
+- **Componentização:** Separação clara de responsabilidades por componente.
+- **Estilização:** Uso de CSS modular por componente.
+- **Boas práticas Angular:** Uso de `@Component`, `RouterLink` e módulos do Angular.
+
+---
+
+## Uso
+
+### Como rodar o projeto
+
+1. Instale as dependências:
+   ```sh
+   npm install
+   ```
+2. Rode o servidor de desenvolvimento:
+   ```sh
+   npm start
+   ```
+3. Acesse via navegador em `http://localhost:4200`
+
+### Estrutura de uma página
+
+```html
+<app-navbar></app-navbar>
+<app-ui-base>
+    <router-outlet></router-outlet>
+</app-ui-base>
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Pontos a Definir
 
-## Building
+- Adicionar integração com backend para persistência dos certificados.
+- Implementar autenticação de usuários.
+- Detalhar regras de negócio para geração e validação dos certificados.
+- Expandir cobertura de testes automatizados.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## Referências
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- [Angular Documentation](https://angular.io/docs)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [Bootstrap Documentation](https://getbootstrap.com/)
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+> **Nota:** Para detalhes específicos de regras de negócio, integrações externas ou fluxos avançados, inserir informações nesta documentação conforme evoluir o projeto.
