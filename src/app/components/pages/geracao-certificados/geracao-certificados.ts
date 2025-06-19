@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CertificadosInterface } from '../../../interfaces/certificado';
 import { Certificado } from '../../../_services/certificado';
-import { RedirectCommand } from '@angular/router';
+import { NgToastComponent } from 'ng-angular-popup';
+import { Toast } from '../../../_services/toast';
+
 
 
 @Component({
@@ -16,7 +18,7 @@ import { RedirectCommand } from '@angular/router';
 })
 export class GeracaoCertificados {
 
-  constructor(private certificadoService: Certificado) { }
+  constructor(private certificadoService: Certificado, private toastService: Toast) { }
 
 
   atividade: string = '';
@@ -62,6 +64,7 @@ export class GeracaoCertificados {
       return;
     }
     this.certificadoService.adicionarCertificado(this.certificado);
+    this.toastService.showSuccess('Certificado gerado com sucesso!', 'Sucesso');
     this.clearForm();
   }
 
