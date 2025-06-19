@@ -3,7 +3,9 @@ import { PrimaryButton } from '../../primary-button/primary-button';
 import { SecundaryButton } from '../../secundary-button/secundary-button';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Certificado } from '../../../interfaces/certificado';
+import { CertificadosInterface } from '../../../interfaces/certificado';
+import { Certificado } from '../../../_services/certificado';
+import { RedirectCommand } from '@angular/router';
 
 
 @Component({
@@ -14,9 +16,11 @@ import { Certificado } from '../../../interfaces/certificado';
 })
 export class GeracaoCertificados {
 
+  constructor(private certificadoService: Certificado) { }
+
 
   atividade: string = '';
-  certificado: Certificado = {
+  certificado: CertificadosInterface = {
     atividades: [],
     nome: '',
     data: new Date().toLocaleDateString('pt-BR', {
@@ -45,7 +49,7 @@ export class GeracaoCertificados {
     if (!this.validateForm()) {
       return;
     }
-    console.log(this.certificado);
+    this.certificadoService.adicionarCertificado(this.certificado);
   }
 
 }

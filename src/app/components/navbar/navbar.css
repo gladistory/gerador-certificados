@@ -36,3 +36,8 @@ a {
     font-size: 14px;
 }
 
+li:has(.active) i {
+    color: #3B5AC2;
+    
+}
+

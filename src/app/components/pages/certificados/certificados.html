@@ -3,7 +3,7 @@
     <p class="text-center">Visualize todos os certificados gerados</p>
 </div>
 
-<div class="custom-card">
+<div *ngIf="certificados.length === 0" class="custom-card">
     <div>
         <div class="icon-certificados">
             <i class="ph ph-certificate"></i>
@@ -19,9 +19,6 @@
     </div>
 </div>
 
-<div class="item-certificados">
-    <app-item-certificado></app-item-certificado>
-    <app-item-certificado></app-item-certificado>
-    <app-item-certificado></app-item-certificado>
+<div *ngIf="certificados.length > 0" class="item-certificados">
     <app-item-certificado></app-item-certificado>
 </div>
