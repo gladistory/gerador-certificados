@@ -2,10 +2,11 @@
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <div class="fw-bold nome-aluno">
-                Nome do aluno
+                {{ nome }}
             </div>
-            <small class="small-date">Gerado em 21/04/2025</small>
+            <small class="small-date">{{ data }}</small>
         </div>
-        <app-secundary-button (click)="redirectToCertificado()" [textSecundaryButton]="'Ver'"></app-secundary-button>
+        <app-secundary-button (click)="redirectToCertificado(idCertificado)"
+            [textSecundaryButton]="'Ver'"></app-secundary-button>
     </div>
 </div>

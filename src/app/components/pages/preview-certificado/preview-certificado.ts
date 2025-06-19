@@ -18,6 +18,7 @@ export class PreviewCertificado {
 
   ngOnInit() {
     this.certificado = this.certificadoService.certificados;
+    console.log(this.certificado);
   }
 
 }
