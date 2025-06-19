@@ -45,11 +45,24 @@ export class GeracaoCertificados {
     return this.certificado.atividades.length > 0 && this.certificado.nome.length > 0;
   }
 
+  clearForm() {
+    this.certificado = {
+      nome: '',
+      data: new Date().toLocaleDateString('pt-BR', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }),
+      atividades: []
+    };
+  }
+
   submitForm() {
     if (!this.validateForm()) {
       return;
     }
     this.certificadoService.adicionarCertificado(this.certificado);
+    this.clearForm();
   }
 
 }
