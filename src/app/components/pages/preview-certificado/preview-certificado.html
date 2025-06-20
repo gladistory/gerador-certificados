@@ -2,12 +2,12 @@
     <div class="action-buttons">
         <a class="back-button" routerLink="/"><i class="ph ph-arrow-left"></i>
             Voltar</a>
-        <app-secundary-button [textSecundaryButton]="'Download'"
+        <app-secundary-button (click)="downloadCertificado()" [textSecundaryButton]="'Download'"
             [icon]="'ph ph-download-simple'"></app-secundary-button>
     </div>
 
-    <div class="preview-certificado">
-        <div class="content">
+    <div #certificadoContainer class="preview-certificado">
+        <div #certificadoContainer class="content">
             <img class="ribbon" src="certificado/Certificate_Ribbon.png" alt="">
             <div class="header">
                 <h1 class="title">CERTIFICADO DE CONCLUSÃO</h1>
