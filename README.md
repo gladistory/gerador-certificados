@@ -1,6 +1,6 @@
 # Gerador de Certificados – Documentação Técnica
 
-### Acesse em: - [Gerador de Certificados]([https://angular.io/docs](https://gladistory.github.io/gerador-certificados/))
+### Acesse em: - [Gerador de Certificados](https://gladistory.github.io/gerador-certificados/)
 
 ## Visão Geral
 
