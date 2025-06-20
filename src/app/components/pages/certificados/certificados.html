@@ -20,6 +20,6 @@
 </div>
 
 <div *ngIf="certificados.length > 0" class="item-certificados">
-    <app-item-certificado *ngFor="let certificado of certificados; let i = index" [nome]="certificado.nome"
-        [data]="certificado.data" [idCertificado]="i"></app-item-certificado>
+    <app-item-certificado *ngFor="let certificado of certificados" [nome]="certificado.nome" [data]="certificado.data"
+        [idCertificado]="certificado.id"></app-item-certificado>
 </div>

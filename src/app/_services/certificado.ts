@@ -12,7 +12,7 @@ export class Certificado {
 
   adicionarCertificado(certificado: CertificadosInterface) {
     this.certificados.push(certificado);
-    console.log(this.certificados);
+    localStorage.setItem('certificados', JSON.stringify(this.certificados));
   }
 
 }

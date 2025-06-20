@@ -21,6 +21,6 @@ export class Certificados {
   routeCreateCertificado = '/gerador-certificados';
 
   ngOnInit() {
-    this.certificados = this.certificadoService.certificados;
+    this.certificados = this.certificadoService.certificados.reverse();
   }
 }

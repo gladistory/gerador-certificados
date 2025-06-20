@@ -1,10 +1,10 @@
 <div class="card p-3 custom-card">
     <div class="d-flex justify-content-between align-items-center">
-        <div>
+        <div class="d-flex flex-column justify-content-between align-items-start">
             <div class="fw-bold nome-aluno">
                 {{ nome }}
             </div>
-            <small class="small-date">{{ data }}</small>
+            <small class="small-date">Gerado em {{ data }}</small>
         </div>
         <app-secundary-button (click)="redirectToCertificado(idCertificado)"
             [textSecundaryButton]="'Ver'"></app-secundary-button>

@@ -5,8 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CertificadosInterface } from '../../../interfaces/certificado';
 import { Certificado } from '../../../_services/certificado';
-import { NgToastComponent } from 'ng-angular-popup';
 import { Toast } from '../../../_services/toast';
+import { v4 as uuidv4 } from 'uuid';
+import { Router } from '@angular/router';
 
 
 
@@ -18,11 +19,12 @@ import { Toast } from '../../../_services/toast';
 })
 export class GeracaoCertificados {
 
-  constructor(private certificadoService: Certificado, private toastService: Toast) { }
+  constructor(private certificadoService: Certificado, private toastService: Toast, private router: Router) { }
 
 
   atividade: string = '';
   certificado: CertificadosInterface = {
+    id: uuidv4(),
     atividades: [],
     nome: '',
     data: new Date().toLocaleDateString('pt-BR', {
@@ -50,6 +52,7 @@ export class GeracaoCertificados {
   clearForm() {
     this.certificado = {
       nome: '',
+      id: uuidv4(),
       data: new Date().toLocaleDateString('pt-BR', {
         year: 'numeric',
         month: '2-digit',
@@ -65,6 +68,8 @@ export class GeracaoCertificados {
     }
     this.certificadoService.adicionarCertificado(this.certificado);
     this.toastService.showSuccess('Certificado gerado com sucesso!', 'Sucesso');
+    this.router.navigate(['preview-certificado', this.certificado.id]);
+
     this.clearForm();
   }
 

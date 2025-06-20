@@ -16,7 +16,7 @@
                 </p>
             </div>
             <div class="content-name">
-                <h2 class="name">Vinicius de Souza Santos</h2>
+                <h2 class="name">{{ certificado.nome }}</h2>
             </div>
 
             <div class="content-description">
@@ -26,14 +26,12 @@
                     </p>
                 </div>
                 <div class="content-activities">
-                    <p>Introdução ao Angular, Configuração com Angular CLI, Criação de componentes reutilizáveis,
-                        Manipulação de dados, Implementação de data binding, Criação de rotas com Angular Router,
-                        Consumo de APIs REST</p>
+                    <p>{{ certificado.atividades.join(', ') }}</p>
                 </div>
             </div>
 
             <div class="content-footer">
-                <span class="issue-date">Emitido em 25/04/2025</span>
+                <span class="issue-date">Emitido em {{ certificado.data }}</span>
                 <img class="signature" src="certificado/Certificate_Signature.svg" alt="">
             </div>
 

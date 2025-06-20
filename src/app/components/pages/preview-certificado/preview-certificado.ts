@@ -3,6 +3,7 @@ import { SecundaryButton } from '../../secundary-button/secundary-button';
 import { Certificado } from '../../../_services/certificado';
 import { CertificadosInterface } from '../../../interfaces/certificado';
 import { RouterLink, RouterModule } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-preview-certificado',
@@ -12,13 +13,19 @@ import { RouterLink, RouterModule } from '@angular/router';
 })
 export class PreviewCertificado {
 
-  certificado: CertificadosInterface[] = [];
+  certificado: CertificadosInterface = {
+    id: '',
+    atividades: [],
+    nome: '',
+    data: ''
+  };
 
-  constructor(private certificadoService: Certificado) { }
+  constructor(private certificadoService: Certificado, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.certificado = this.certificadoService.certificados;
-    console.log(this.certificado);
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.certificado = this.certificadoService.certificados.find(cert => cert.id === id) || this.certificado;
+    }
   }
-
 }
